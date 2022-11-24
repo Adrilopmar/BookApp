@@ -1,0 +1,37 @@
+<div class="book-details-content m-9 border flex ">
+    <div class="m-4 flex w-2/4 ">
+        <img [src]="singleBook.firstThumbnailUrl" alt="">
+        <div class="w-full">
+            <div class="flex mb-2">
+                <p class="w-2/4 font-bold text-right mr-2">ISBN:</p>
+                <p class="w-2/4 ">{{singleBook.isbn}}</p>
+            </div>
+            <div class="flex mb-2">
+                <p class="w-2/4 font-bold text-right mr-2">Title:</p>
+                <p class="w-2/4">{{singleBook.title}}</p>
+            </div>
+            <div class="flex flex-wrap lg:flex-nowrap  mb-2">
+                <p class="w-2/4 font-bold text-right mr-2">Author(s):</p>
+                <div class="w-2/4 authors" >
+                    <p *ngFor="let author of singleBook.authors">{{author}}</p>
+                </div>
+            </div>
+            <div class="flex mb-2">
+                <p class="w-2/4 font-bold text-right mr-2">Price:</p>
+                <p class="w-2/4">{{singleBook.price | number:'0.2'}} €</p>
+            </div>
+            <div class="flex mb-2">
+                <p class="w-2/4 font-bold text-right mr-2">Published date:</p>
+                <p class="w-2/4">{{singleBook.published | date}}</p>
+            </div>
+            <div class="flex mb-2">
+                <p class="w-2/4 font-bold text-right mr-2">Rating</p>
+                <p class="w-2/4">{{singleBook.rating}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="w-2/4 border m-4 p-4">
+        <h3 class="font-bold mb-2">Description</h3>
+        <p>{{singleBook.description}}</p>
+    </div>
+</div>
