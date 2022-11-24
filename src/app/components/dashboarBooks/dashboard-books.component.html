@@ -1,5 +1,4 @@
-
-<div class="content">
+<div  class="content">
     <div class=" w-11/12 ml-auto">
         <ul class="  w-full flex justify-between">
             <li>ISBN</li>
@@ -9,8 +8,9 @@
             <li>Published date</li>
             <li>Rating</li>
         </ul>
-    </div>
-        <a routerLink="/book/{{book.isbn}}" *ngFor="let book of allBooks" class="flex border p-4 my-2"> 
+    </div >
+    <div id="bookContent">
+        <a  routerLink="/book/{{book.isbn}}" *ngFor="let book of bookSvc.filteredBooks" class="flex border p-4 my-2"> 
         <div>
             <img [src]="book.firstThumbnailUrl" alt="">
         </div>
@@ -26,5 +26,5 @@
                 <li>{{book.rating }}</li>
             </ul>
         </div>
-    </a>
+    </a></div>
 </div>

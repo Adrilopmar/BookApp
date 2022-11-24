@@ -11,13 +11,15 @@ import { Book } from 'src/app/classes/books';
 export class DashboardBooksComponent implements OnInit {
 
   constructor(private http:HttpClient,
-    private bookSvc:BooksService) {}
+    public bookSvc:BooksService) {}
 
-allBooks:any =[]
 
-   ngOnInit():void {
-   this.allBooks = this.bookSvc.getBooks().subscribe(book => {this.allBooks = book})
-   
+
+     ngOnInit():void {
+      // this.bookSvc.getBooks().subscribe(book => {this.bookSvc.allBooks=book})
+     
   }
-
+  conse():void{
+    console.log(this.bookSvc.allBooks)
+  }
 }
