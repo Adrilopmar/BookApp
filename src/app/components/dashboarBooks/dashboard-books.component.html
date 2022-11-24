@@ -1,0 +1,30 @@
+
+<div class="content">
+    <div class=" w-11/12 ml-auto">
+        <ul class="  w-full flex justify-between">
+            <li>ISBN</li>
+            <li >Title</li>
+            <li >Author(s)</li>
+            <li >Price</li>
+            <li>Published date</li>
+            <li>Rating</li>
+        </ul>
+    </div>
+        <a routerLink="/book/{{book.isbn}}" *ngFor="let book of allBooks" class="flex border p-4 my-2"> 
+        <div>
+            <img [src]="book.firstThumbnailUrl" alt="">
+        </div>
+        <div class="w-full">
+            <ul class="flex w-full justify-between">
+                <li class="ml-4">{{book.isbn}}</li>
+                <li class="">{{book.title}}</li>
+                <li class="flex flex-col">
+                    <p *ngFor="let author of book.authors"> {{author}}</p>
+                </li>
+                <li>{{book.price | number: '0.2'}} € </li>
+                <li>{{book.published | date}}</li>
+                <li>{{book.rating }}</li>
+            </ul>
+        </div>
+    </a>
+</div>

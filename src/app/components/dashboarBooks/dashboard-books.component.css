@@ -1,0 +1,12 @@
+.content{
+    padding: 2.25rem;
+}
+img{
+    height: 150px;
+}
+li{
+    width: 10%;
+}
+.border:hover{
+    background-color: #f1f1f1;
+}
